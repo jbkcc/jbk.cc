@@ -1,0 +1,482 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+
+      :root {
+        --big-size: 1.7rem;
+        --mid-size: 1.0rem;
+        --small-size: 0.9rem;
+        --margin: 0.5rem;
+      }
+
+      a {
+        color: black;
+      }
+
+      body {
+        font-family: "Alegreya";
+        font-weight: 300;
+      }
+
+      body {
+        width: 7in;
+        margin: 0 auto;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        padding-inline-start: 0px;
+      }
+      li {
+        margin: 0;
+        padding: 0;
+        padding-inline-start: 10px;
+        position: relative;
+      }
+      li::before {
+        content: "•";
+        list-style-position: inside;
+        position: absolute;
+        left: 0px;
+      }
+
+      .section {
+        margin-bottom: 1rem;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .contact > .section-title {
+        grid-column: 1 / 3;
+      }
+
+      .phone-email {
+        margin-left: auto;
+        text-align: right;
+        font-size: var(--mid-size);
+      }
+
+      .address {
+        justify-content: right;
+        font-size: var(--mid-size);
+      }
+
+      .role {
+        page-break-inside: avoid;
+      }
+
+      .old {
+        display: none;
+      }
+      .role.old > .description {
+        display: none;
+      }
+
+      .section-title {
+        font-weight: 700;
+        font-family: "Alegreya Sans";
+        /* text-transform: uppercase; */
+        border-bottom: gray 1px solid;
+        font-size: var(--big-size);
+        margin-top: var(--margin);
+        margin-bottom: calc(2.1 * var(--margin));
+      }
+
+      .role {
+        margin-top: calc(2 * var(--margin));
+        font-size: var(--mid-size);
+      }
+      .who {
+        font-weight: 700;
+        font-size: var(--mid-size);
+      }
+      .when {
+        margin-left: auto;
+        font-size: var(--mid-size);
+      }
+      .title {
+        <!-- font-style: italic; -->
+        font-size: var(--mid-size);
+      }
+      .short-description {
+        font-style: italic;
+        <!-- font-size: 0.9rem; -->
+      }
+      .description {
+        font-size: var(--small-size);
+      }
+
+      .role-heading {
+        display: grid;
+        grid-template-columns: auto 1fr;
+      }
+      .role-heading > .who {
+        grid-column: 1 / 2;
+        grid-row: 1;
+      }
+      .role-heading > .when {
+        grid-column: 2 / 3;
+        grid-row: 1;
+      }
+      .role-heading > .title {
+        grid-column: 1 / 2;
+        grid-row: 2;
+      }
+      .role-heading > .short-description {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        margin-bottom: calc(0.6 * var(--margin));
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .skills > .section-title {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+      .skills > .short-description {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        margin-bottom: calc(0.6 * var(--margin));
+      }
+      .skills > .category {
+        grid-row: 3;
+      }
+
+      .publication {
+        text-indent: -1em;
+        margin-left: 1em;
+        margin-bottom: var(--margin);
+        font-size: var(--small-size);
+      }
+
+      .details {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section contact">
+      <div class="section-title">
+        <span>Joshua Kopin</span>
+      </div>
+      <div class="address">23 Linden Ave.<br />Greenfield, MA 01301</div>
+      <div class="phone-email">781 799 4323<br />joshua.kopin@gmail.com</div>
+    </div>
+
+    <div class="section experience">
+      <div class="section-title">Experience</div>
+
+      <div class="role">
+        <div class="role-heading">
+          <div class="who">Apple Inc.&ensp;(Core OS)</div>
+          <div class="when">September 2016 &ndash; October 2021</div>
+          <div class="title">Senior Software Engineer</div>
+          <div class="short-description">
+            Research on distributed human-computer interaction, network
+            protocols and latency, dataflow semantics, dataflow architectures
+            for interactive distributed computing.
+          </div>
+        </div>
+        <div class="description">
+          Specification of our dataflow language's semantics; literature
+          surveys; design of novel execution trace visualization techniques;
+          measurement and optimization of a user-space scheduler; measurement
+          and analysis of latency and jitter inherent to the 802.11 MAC
+          protocol; development of a distributed GPU-accelerated raytracer.
+        </div>
+      </div>
+
+      <div class="section role">
+        <div class="role-heading">
+          <div class="who">Apple Inc.&ensp;(Industrial Design)</div>
+          <div class="when">September 2013 &ndash; August 2016</div>
+          <div class="title">Interaction Design Prototyper</div>
+          <div class="short-description">
+            Lead software developer on the haptic design team.
+          </div>
+        </div>
+        <div class="description">
+          Foundational prototyping of haptic experiences and interface
+          conventions across all product lines; architecture, development, and
+          maintenance of libraries and applications for rapid prototyping,
+          signal processing, audio rendering, user interface construction, live
+          demo configuration, user study administration.
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-heading">
+          <div class="who">Apple Inc.&ensp;(Silicon Engineering)</div>
+          <div class="when">September 2011 &ndash; September 2013</div>
+          <div class="title">Silicon Validation Engineer</div>
+          <div class="short-description">
+            Post-silicon validation of the image sensor processor in Apple's
+            first arm64 SoC.
+          </div>
+        </div>
+        <div class="description">
+          Design, implementation, and deployment of a system for reproducible
+          high-throughput randomized test generation, execution, and triage;
+          collaboration with compiler developers, platform architects, FPGA
+          maintainers, and pre-silicon validation engineers to root-cause bugs
+          in hardware.
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-heading">
+          <div class="who">Zigelbaum+Coelho</div>
+          <div class="when">May 2010 &ndash; May 2011</div>
+          <div class="title">Software Developer &amp; Assistant Designer</div>
+          <div class="short-description">
+            Designed, wrote, tested, and documented firmware for Z+C’s
+            interactive installation “<a href="http://www.cmarcelo.com/six-forty-by-four-eighty/">Six-Forty by Four-Eighty</a>.”
+          </div>
+        </div>
+        <div class="description">
+          Architecture and development of a highly concurrent interactive
+          Arduino-based firmware; co-authorship of conference paper published
+          at TEI '11.<span class="details">Support for concurrent flicker-free
+          animation of an RGB LED based on a physical model, receipt of control
+          signals from an infrared remote, reaction to and conditioning of
+          capacitive touch sensor data, and continuous bidirectional
+          communication via a custom serial protocol; assistance with design,
+          manufacture, shipping, and presentation at Design Miami/Basel;
+          co-authorship of conference paper published at TEI '11.</span>
+        </div>
+      </div>
+
+      <div class="role old">
+        <div class="role-heading">
+          <div class="who">Mark Tribe</div>
+          <div class="when">Winter 2009 &ndash; 2010</div>
+          <div class="title">
+            Embedded System Designer, Embedded Software Developer
+          </div>
+          <div class="short-description">
+            Built, programmed, and installed Mark’s interactive installation at
+            the DeCordova Museum in Lincoln, MA.
+          </div>
+        </div>
+        <div class="description">
+          System functions included infrared motion sensing, servomotor control,
+          audio transducer control, and room lighting control.
+        </div>
+      </div>
+
+      <div class="role old">
+        <div class="role-heading">
+          <div class="who">Tactable LLC</div>
+          <div class="when">Summer 2009</div>
+          <div class="title">Paid Intern</div>
+          <div class="short-description">
+            Internship in embedded systems design, input device prototyping, and
+            software development.
+          </div>
+        </div>
+        <div class="description">
+          Designed, sourced, and prototyped an embedded system for an
+          experimental input device; managed client relations and project
+          execution while implementing client-designed multitouch user interface
+          elements.
+        </div>
+      </div>
+
+      <div class="role old">
+        <div class="role-heading">
+          <div class="who">David Merrill</div>
+          <div class="when">Winter 2008 &ndash; 2009</div>
+          <div class="title">Software Developer, Interaction Prototyper</div>
+          <div class="short-description">
+            Developed a prototype music sequencer controlled with an
+            experimental I/O device.
+          </div>
+        </div>
+        <div class="description">
+          The sequencer was used in David Merrill’s presentation of Siftables at
+          the 2009 TED conference
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-heading">
+          <div class="who">MIT Media Lab, Fluid Interfaces Group</div>
+          <div class="when">Summer 2008</div>
+          <div class="title">Intern &amp; Research Assistant</div>
+          <div class="short-description">
+            Internship in embedded systems design, software development, and
+            interface design research.
+          </div>
+        </div>
+        <div class="description old">
+          Contributed to existing AVR firmware for PhD student David Merrill’s
+          Siftables project; helped develop a Bluetooth-enabled iteration of PhD
+          student Marcelo Coelho’s Shutters device.
+        </div>
+      </div>
+
+      <div class="role old">
+        <div class="role-heading">
+          <div class="who">
+            Boston University, Professor Mark Horenstein’s Lab
+          </div>
+          <div class="when">Summer 2007</div>
+          <div class="title">Paid Intern</div>
+          <div class="short-description">
+            Internship in control system architecture, and embedded system
+            design.
+          </div>
+        </div>
+        <div class="description">
+          Architected a fluid transfer robot and designed its control system and
+          position sensor; designed, built, and programmed a stepper motor
+          controller using a PIC microcontroller.
+        </div>
+      </div>
+
+      <div class="role old">
+        <div class="role-heading">
+          <div class="who">
+            Boston University, Professor Mark Horenstein’s Lab
+          </div>
+          <div class="when">Summer 2006</div>
+          <div class="title">Paid Intern</div>
+          <div class="short-description">
+            Internship in circuit design, electronic prototyping, and testing
+            methodology.
+          </div>
+        </div>
+        <div class="description">
+          Researched, prototyped, designed, and manufactured an 8-channel
+          nanoscale amplifier for use in a Masters student’s thesis research on
+          electrostatics
+        </div>
+      </div>
+    </div>
+
+    <div style="page-break-after: always; width: 100%; clear: both"></div>
+
+    <div class="section skills">
+      <div class="section-title">Skills</div>
+      <div class="description" style="grid-column: 1 / 3; padding-bottom: 1rem">
+        <div class="who">Expertise</div>
+        <ul>
+          <li>
+            Research software engineering, performance measurement, data
+            visualization.
+          </li>
+          <li>
+            Rapid prototyping of GUI, GPU, audio, network, and systems software.
+          </li>
+          <li>Test automation and data visualization.</li>
+          <li>Firmware development for embedded systems.</li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="who">Languages</div>
+        <div class="description">
+          <ul>
+            <li>Swift, Objective-C/C++, Metal</li>
+            <li>C, C++</li>
+            <li>Python, Julia, Lua</li>
+            <li>Bash, Zsh, Tcl, Perl</li>
+            <!--<li>Java, MATLAB</li>-->
+            <li>Javascript, HTML, CSS</li>
+            <li>Processing, Pure Data</li>
+            <li>Datalog</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="who">Tools and Technologies</div>
+        <div class="description">
+          <ul>
+            <li>Vim, Emacs, Xcode</li>
+            <li>Clang, LLVM, LLDB, Git, SVN, Perforce</li>
+            <li>Numpy, Pandas, Matplotlib, GraphViz</li>
+            <li>Wireshark, nm, otool</li>
+            <li>AVR, PIC, Cortex M3</li>
+            <li>TCP, UDP, 802.11</li>
+            <li>Make, Ninja, CMake</li>
+          </ul>
+        </div>
+      </div>
+
+      <!--<div class="category">-->
+      <!--  <div class="title">Technologies</div>-->
+      <!--  <div class="description">-->
+      <!--    <ul>-->
+      <!--      <li>Apple SDKs, iCloud</li>-->
+      <!--      <li>POSIX, pthreads, C++17, std::atomic</li>-->
+      <!--      <!-1- <li>C runtime</li> -1->-->
+      <!--      <!-1- <li>Bluetooth, UART, I2C, Open Sound Control, MIDI</li> -1->-->
+      <!--      <!-1-<li>Embedded real-time systems design for interaction</li>-1->-->
+      <!--      <!-1-<li>Circuit design, PCB layout, prototyping, soldering, testing</li>-1->-->
+      <!--      <!-1- <li>System validation, diagnostics, debugging</li> -1->-->
+      <!--      <!-1- <li>Embedded system diagnostics and debugging</li> -1->-->
+      <!--      <!-1-<li>Optimization for software size and speed</li>-1->-->
+      <!--      <!-1-<li>Data visualization with d3.js</li>-->
+      <!--                      <li>Data analysis with SQLite</li>-1->-->
+      <!--      <li>-->
+      <!--        Exploratory data visualization, purpose-built visualization tools-->
+      <!--      </li>-->
+      <!--      <li>Graphics programming</li>-->
+      <!--      <li>Network programming programming</li>-->
+      <!--      <li>Audio programming and signal processing</li>-->
+      <!--      <li>Signal processing for sensing</li>-->
+      <!--      <!-1- <li>Hardware synthesis, FPGAs (Altera)</li> -1->-->
+      <!--    </ul>-->
+      <!--  </div>-->
+      <!--</div>-->
+    </div>
+
+    <div class="section education">
+      <div class="section-title">Education</div>
+
+      <div class="role-heading">
+        <div class="who">Brown University</div>
+        <div class="when">September 2007 &ndash; May 2011</div>
+        <div class="title">Bachelor of Arts in Science and Society</div>
+        <div class="short-description">
+          Philosophy of Design and Engineering
+        </div>
+      </div>
+
+      <!-- <div class="description old"> -->
+      <!--   Philosophy of mathematics; Philosophy of mind; Metaphysics; Readings in -->
+      <!--   media theory; Glass casting (RISD); Glassblowing (RISD); Glass sculpture -->
+      <!--   studio (RISD); Electronic and experimental music ensemble; Digital -->
+      <!--   writing; Data structures &amp; Algorithms; Computer graphics; -->
+      <!--   Programming for embedded and real-time systems; Embedded system design; -->
+      <!--   Graduate seminar in reconfigurable computing. -->
+      <!-- </div> -->
+    </div>
+
+    <div class="section publications">
+      <div class="section-title">Publications &amp; Patents</div>
+      <div class="publication">
+        Wells, N.M., Kocienda, K.L., Moussette, C., Mouilleseaux, J.P.M., Kopin, J.B. and Fennis, J.K., Apple Inc, 2021. <i>Devices and methods for processing and disambiguating touch inputs using intensity thresholds based on prior input intensity</i>. U.S. Patent 11,086,368.
+      </div>
+      <div class="publication">
+        Chaudhri, I.A., Bauer, S.J., Moussette, C., Mouilleseaux, J.P.M., Cordier, M.S. and Kopin, J.B., Apple Inc, 2019.  <i>Devices, methods, and graphical user interfaces for providing feedback during interaction with an intensity-sensitive button</i>. U.S. Patent 10,228,765.
+      </div>
+      <div class="publication">
+        Chaudhri, I.A., Bauer, S.J., Verweij, H.D., Butcher, G.I., Moussette, C., Mouilleseaux, J.P.M., Cordier, M.S., Kopin, J.B., Preston, D.T. and Hajas, P.L., Apple Inc, 2018. <i>Devices, methods, and graphical user interfaces for providing haptic feedback</i>. U.S. Patent 9,996,157.
+      </div>
+      <div class="publication">
+        Coelho, M., Zigelbaum, J., and Kopin, J., 2010.  <i>Six-forty by four-eighty: The post- industrial design of computational materials</i>. In Proceedings of the Fifth International Conference on Tangible, Embedded, and Embodied Interaction, TEI ’11, pages 253–256, New York, NY, USA. Association for Computing Machinery.
+      </div>
+    </div>
+  </body>
+</html>

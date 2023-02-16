@@ -6,10 +6,10 @@
       @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
 
       :root {
-        --big-size: 1.7rem;
-        --mid-size: 1.0rem;
-        --small-size: 0.9rem;
-        --margin: 0.5rem;
+        --big-size: 12pt;
+        --mid-size: 10pt;
+        --small-size: 9pt;
+        --margin: 4pt;
       }
 
       a {
@@ -45,7 +45,7 @@
       }
 
       .section {
-        margin-bottom: 1rem;
+        margin-bottom: calc(2*var(--margin));
       }
 
       .contact {
@@ -59,12 +59,12 @@
       .phone-email {
         margin-left: auto;
         text-align: right;
-        font-size: var(--mid-size);
+        font-size: var(--small-size);
       }
 
       .address {
         justify-content: right;
-        font-size: var(--mid-size);
+        font-size: var(--small-size);
       }
 
       .role {
@@ -85,7 +85,7 @@
         border-bottom: gray 1px solid;
         font-size: var(--big-size);
         margin-top: var(--margin);
-        margin-bottom: calc(2.1 * var(--margin));
+        margin-bottom: calc(1.5 * var(--margin));
       }
 
       .role {
@@ -101,12 +101,11 @@
         font-size: var(--mid-size);
       }
       .title {
-        <!-- font-style: italic; -->
         font-size: var(--mid-size);
       }
       .short-description {
         font-style: italic;
-        <!-- font-size: 0.9rem; -->
+        font-size: var(--mid-size);
       }
       .description {
         font-size: var(--small-size);
@@ -146,6 +145,10 @@
         grid-column: 1 / 3;
         grid-row: 2;
         margin-bottom: calc(0.6 * var(--margin));
+      }
+      .skills > .description {
+        grid-column: 1 / 3;
+        padding-bottom: calc(0.6 * var(--margin));
       }
       .skills > .category {
         grid-row: 3;
@@ -373,11 +376,11 @@
       </div>
     </div>
 
-    <div style="page-break-after: always; width: 100%; clear: both"></div>
+    <!-- <div style="page-break-after: always; width: 100%; clear: both"></div> -->
 
     <div class="section skills">
       <div class="section-title">Skills</div>
-      <div class="description" style="grid-column: 1 / 3; padding-bottom: 1rem">
+      <div class="description">
         <div class="who">Expertise</div>
         <ul>
           <li>
@@ -403,7 +406,7 @@
             <!--<li>Java, MATLAB</li>-->
             <li>Javascript, HTML, CSS</li>
             <li>Processing, Pure Data</li>
-            <li>Datalog</li>
+            <!--<li>Datalog</li>-->
           </ul>
         </div>
       </div>
@@ -458,9 +461,7 @@
         <div class="who">Brown University</div>
         <div class="when">September 2007 &ndash; May 2011</div>
         <div class="title">Bachelor of Arts in Science and Society</div>
-        <div class="short-description">
-          Philosophy of Design and Engineering
-        </div>
+        <div class="short-description">Philosophy of Design and Engineering</div>
       </div>
 
       <!-- <div class="description old"> -->
@@ -473,6 +474,7 @@
       <!-- </div> -->
     </div>
 
+    <!--
     <div class="section publications">
       <div class="section-title">Publications &amp; Patents</div>
       <div class="publication">
@@ -488,5 +490,6 @@
         Coelho, M., Zigelbaum, J., and Kopin, J., 2010.  <i>Six-forty by four-eighty: The post- industrial design of computational materials</i>. In Proceedings of the Fifth International Conference on Tangible, Embedded, and Embodied Interaction, TEI ’11, pages 253–256, New York, NY, USA. Association for Computing Machinery.
       </div>
     </div>
+    -->
   </body>
 </html>

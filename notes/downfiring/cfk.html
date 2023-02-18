@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8" />
+    <title>Downfiring</title>
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg"> -->
+    <meta property="og:title" content="Research Notes - Downfiring" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 10px;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+      <svg
+        id="root"
+        version="1.1"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1000 1000"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+      </svg>
+    <script>
+      const svg = document.getElementById("root")
+      
+      function h(name, attrs) {
+        const el = document.createElementNS('http://www.w3.org/2000/svg', name);
+        for (let [key, value] of Object.entries(attrs)) {
+          el.setAttribute(key, value)
+        }
+        return el;
+      }
+
+      function addto(parent, element) {
+        parent.appendChild(element);
+        return element;
+      }
+
+      function line(x1, y1, x2, y2, attrs={}) {
+        return h('line', {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2, ...attrs});
+      }
+        
+      for (let i=0; i<100; i++) {
+        addto(svg, line(i*2, 0, i*i, 100, {'stroke': 'blue'}));
+      }
+
+    </script>
+
+  </body>
+</html>
